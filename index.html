@@ -1,194 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Oscar Romero | Cybersecurity Portfolio</title>
+    <title>Oscar Romero | Ciberseguridad</title>
 
     <meta name="description"
-          content="Cybersecurity portfolio focused on penetration testing, web security, HTB, PortSwigger and security research.">
+          content="Portafolio técnico de Oscar Romero enfocado en ciberseguridad, pentesting y seguridad web.">
 
     <style>
+
         * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0b0f14;
-            color: #e6edf3;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            color: #222;
             line-height: 1.6;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
+        header {
+            background: #222;
+            color: white;
+            padding: 20px;
         }
 
-        header {
-            max-width: 1100px;
+        nav {
+            max-width: 900px;
             margin: auto;
-            padding: 25px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-weight: bold;
-            font-size: 20px;
-        }
-
         nav a {
-            margin-left: 25px;
-            color: #8b949e;
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
         }
 
         nav a:hover {
-            color: #58a6ff;
+            text-decoration: underline;
         }
 
-        .hero {
-            max-width: 1100px;
+        main {
+            max-width: 900px;
             margin: auto;
-            padding: 120px 20px 100px;
+            padding: 50px 20px;
         }
 
-        .hero span {
-            color: #58a6ff;
-        }
-
-        .hero h1 {
-            font-size: 56px;
-            line-height: 1.1;
-            margin-bottom: 25px;
-        }
-
-        .hero p {
-            max-width: 700px;
-            color: #8b949e;
-            font-size: 20px;
-            margin-bottom: 35px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .button {
-            padding: 12px 20px;
-            border: 1px solid #30363d;
-            border-radius: 6px;
-            background: #161b22;
-        }
-
-        .button:hover {
-            border-color: #58a6ff;
-        }
-
-        section {
-            max-width: 1100px;
-            margin: auto;
-            padding: 70px 20px;
-        }
-
-        section h2 {
-            font-size: 32px;
-            margin-bottom: 35px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 8px;
-            padding: 25px;
-        }
-
-        .card h3 {
+        h1 {
+            font-size: 40px;
             margin-bottom: 10px;
         }
 
-        .card p {
-            color: #8b949e;
+        h2 {
+            margin-top: 50px;
         }
 
-        .progress {
-            margin-top: 20px;
+        p {
+            color: #555;
         }
 
-        .progress-label {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
+        .intro {
+            margin-bottom: 50px;
         }
 
-        .bar {
-            height: 8px;
-            background: #21262d;
-            border-radius: 5px;
-            overflow: hidden;
+        .tarjetas {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
         }
 
-        .fill {
-            height: 100%;
-            background: #58a6ff;
+        .tarjeta {
+            background: white;
+            padding: 25px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
         }
 
-        .htb {
-            width: 0%;
+        .numero {
+            font-size: 30px;
+            font-weight: bold;
+            margin: 15px 0;
         }
 
-        .portswigger {
-            width: 0%;
+        .tarjeta a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        .knowledge {
-            width: 0%;
+        .tarjeta a:hover {
+            text-decoration: underline;
         }
 
         footer {
-            border-top: 1px solid #30363d;
+            margin-top: 60px;
+            padding: 30px;
             text-align: center;
-            padding: 40px 20px;
-            color: #8b949e;
+            background: #222;
+            color: white;
         }
 
-        @media (max-width: 700px) {
-            .hero h1 {
-                font-size: 40px;
-            }
+        @media (max-width: 600px) {
 
             nav {
-                display: none;
+                display: block;
             }
+
+            nav a {
+                display: inline-block;
+                margin: 10px 15px 0 0;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .tarjetas {
+                grid-template-columns: 1fr;
+            }
+
         }
+
     </style>
 </head>
 
+
 <body>
+
 
 <header>
 
-    <div class="logo">
-        OSCAR ROMERO
-    </div>
-
     <nav>
-        <a href="#about">About</a>
-        <a href="#journey">Journey</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+
+        <strong>Oscar Romero</strong>
+
+        <div>
+
+            <a href="#inicio">Inicio</a>
+
+            <a href="#portafolio">Portafolio</a>
+
+            <a href="#proyectos">Proyectos</a>
+
+            <a href="#contacto">Contacto</a>
+
+        </div>
+
     </nav>
 
 </header>
@@ -196,239 +160,203 @@
 
 <main>
 
-    <!-- HERO -->
 
-    <section class="hero">
+    <!-- INICIO -->
+
+    <section id="inicio" class="intro">
 
         <h1>
-            Cybersecurity<br>
-            <span>Portfolio</span>
+            Portafolio Técnico
         </h1>
 
         <p>
-            Practical cybersecurity research focused on penetration testing,
-            web security, Active Directory and security labs.
+            Ciberseguridad · Pentesting · Seguridad Web
         </p>
 
-        <div class="buttons">
+        <p>
+            Este sitio documenta mi aprendizaje práctico y los
+            proyectos que desarrollo en el área de ciberseguridad.
+        </p>
 
-            <a class="button"
-               href="https://oromero12.github.io/"
-               target="_blank">
-                GitHub
-            </a>
+        <p>
 
-            <a class="button"
-               href="#journey">
-                My Journey
-            </a>
+            <strong>Meta principal:</strong>
 
-        </div>
+            construir un portafolio técnico mediante
+            100 máquinas de Hack The Box y
+            100 laboratorios de PortSwigger.
 
-    </section>
-
-
-    <!-- ABOUT -->
-
-    <section id="about">
-
-        <h2>About</h2>
-
-        <div class="card">
-
-            <p>
-                I am building a practical cybersecurity portfolio through
-                hands-on labs, penetration testing exercises and security
-                research.
-            </p>
-
-            <br>
-
-            <p>
-                My current focus is on developing practical skills through
-                Hack The Box and PortSwigger Web Security Academy.
-            </p>
-
-        </div>
+        </p>
 
     </section>
 
 
-    <!-- JOURNEY -->
+    <!-- PORTAFOLIO -->
 
-    <section id="journey">
+    <section id="portafolio">
 
-        <h2>100 × 100 Journey</h2>
+        <h2>
+            Mi progreso
+        </h2>
 
-        <div class="grid">
 
-            <div class="card">
+        <div class="tarjetas">
 
-                <h3>Hack The Box</h3>
+
+            <!-- HTB -->
+
+            <div class="tarjeta">
+
+                <h3>
+                    Hack The Box
+                </h3>
 
                 <p>
-                    Practical penetration testing across Linux,
-                    Windows, Active Directory and network environments.
+                    Pentesting de sistemas, redes,
+                    Linux, Windows y Active Directory.
                 </p>
 
-                <div class="progress">
-
-                    <div class="progress-label">
-                        <span>Progress</span>
-                        <span>0 / 100</span>
-                    </div>
-
-                    <div class="bar">
-                        <div class="fill htb"></div>
-                    </div>
-
+                <div class="numero">
+                    0 / 100
                 </div>
 
+                <a href="#">
+                    Ver máquinas →
+                </a>
+
             </div>
 
 
-            <div class="card">
+            <!-- PORTSWIGGER -->
 
-                <h3>PortSwigger</h3>
+            <div class="tarjeta">
+
+                <h3>
+                    PortSwigger
+                </h3>
 
                 <p>
-                    Web security labs covering authentication,
-                    access control, injection, SSRF, XSS and more.
+                    Seguridad web, autenticación,
+                    inyección, XSS, SSRF y otras vulnerabilidades.
                 </p>
 
-                <div class="progress">
-
-                    <div class="progress-label">
-                        <span>Progress</span>
-                        <span>0 / 100</span>
-                    </div>
-
-                    <div class="bar">
-                        <div class="fill portswigger"></div>
-                    </div>
-
+                <div class="numero">
+                    0 / 100
                 </div>
+
+                <a href="#">
+                    Ver laboratorios →
+                </a>
 
             </div>
 
-
-            <div class="card">
-
-                <h3>Knowledge Base</h3>
-
-                <p>
-                    Technical notes, methodologies, cheat sheets,
-                    tools and lessons learned.
-                </p>
-
-                <div class="progress">
-
-                    <div class="progress-label">
-                        <span>Progress</span>
-                        <span>0 techniques</span>
-                    </div>
-
-                    <div class="bar">
-                        <div class="fill knowledge"></div>
-                    </div>
-
-                </div>
-
-            </div>
 
         </div>
 
     </section>
 
 
-    <!-- PROJECTS -->
+    <!-- PROYECTOS -->
 
-    <section id="projects">
+    <section id="proyectos">
 
-        <h2>Projects</h2>
+        <h2>
+            Proyectos
+        </h2>
 
-        <div class="grid">
 
-            <div class="card">
+        <div class="tarjetas">
 
-                <h3>CPTS Lab</h3>
+
+            <div class="tarjeta">
+
+                <h3>
+                    Laboratorio de Pentesting
+                </h3>
 
                 <p>
-                    Personal cybersecurity laboratory for practicing
-                    penetration testing techniques.
+                    Laboratorio personal para practicar
+                    técnicas de seguridad ofensiva.
                 </p>
 
             </div>
 
 
-            <div class="card">
+            <div class="tarjeta">
 
-                <h3>Pentest Toolkit</h3>
+                <h3>
+                    Herramientas
+                </h3>
 
                 <p>
-                    Personal collection of scripts and tools for
-                    reconnaissance and penetration testing.
+                    Scripts y herramientas desarrolladas
+                    para automatizar tareas de pentesting.
                 </p>
 
             </div>
 
 
-            <div class="card">
+            <div class="tarjeta">
 
-                <h3>Security Research</h3>
+                <h3>
+                    Base de conocimiento
+                </h3>
 
                 <p>
-                    Technical research and experiments related to
-                    web security and emerging security technologies.
+                    Técnicas, metodologías y aprendizajes
+                    documentados durante el proceso.
                 </p>
 
             </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- CONTACT -->
+    <!-- CONTACTO -->
 
-    <section id="contact">
+    <section id="contacto">
 
-        <h2>Contact</h2>
+        <h2>
+            Contacto
+        </h2>
 
-        <div class="card">
+        <div class="tarjeta">
 
             <p>
+
                 GitHub:
-                <a href="https://oromero12.github.io/"
+
+                <a href="https://github.com/oromero12"
                    target="_blank">
-                    github.com/
+
+                    github.com/oromero12
+
                 </a>
+
             </p>
 
-            <br>
-
             <p>
-                LinkedIn:
-                <a href="#"
-                   target="_blank">
-                    LinkedIn
-                </a>
+                Próximamente: LinkedIn y otros enlaces.
             </p>
 
         </div>
 
     </section>
+
 
 </main>
 
 
 <footer>
 
-    <p>
-        © 2026 Oscar Romero · Cybersecurity Portfolio
-    </p>
+    © 2026 Oscar Romero · Portafolio Técnico
 
 </footer>
 
+
 </body>
+
 </html>
