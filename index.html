@@ -1,362 +1,251 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portafolio técnico de ciberseguridad ofensiva." />
+  <title>Portafolio | Ciberseguridad</title>
+  <style>
+    :root {
+      --canvas: #ffffff;
+      --surface: #f9f8f7;
+      --text: #2c2c2b;
+      --muted: #6f6c68;
+      --border: #e6e5e3;
+      --accent: #2783de;
+      --accent-soft: #e5f2fc;
+      --radius: 12px;
+      --max: 1080px;
+    }
 
-    <title>Oscar Romero | Ciberseguridad</title>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--canvas);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+    }
 
-    <meta name="description"
-          content="Portafolio técnico de Oscar Romero enfocado en ciberseguridad, pentesting y seguridad web.">
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 
-    <style>
+    .container {
+      width: min(calc(100% - 48px), var(--max));
+      margin-inline: auto;
+    }
 
-        * {
-            box-sizing: border-box;
-        }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(230, 229, 227, 0.88);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+    }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            color: #222;
-            line-height: 1.6;
-        }
+    nav {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-        header {
-            background: #222;
-            color: white;
-            padding: 20px;
-        }
+    .brand { font-weight: 750; letter-spacing: -0.02em; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.94rem; }
+    .nav-links a:hover { color: var(--text); }
 
-        nav {
-            max-width: 900px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    main { padding-bottom: 64px; }
+    .hero { padding: 72px 0 48px; }
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(2.6rem, 7vw, 5.4rem);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+    }
+    .lead {
+      max-width: 620px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-        }
+    section { padding: 40px 0; scroll-margin-top: 80px; }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+    h2 { margin: 0; font-size: clamp(1.45rem, 3vw, 2rem); letter-spacing: -0.035em; }
+    .section-number { color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card {
+      min-height: 210px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      transition: transform 160ms ease, border-color 160ms ease;
+    }
+    .card:hover { transform: translateY(-3px); border-color: #c8c6c2; }
+    .card-label { color: var(--muted); font: 700 0.78rem/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 0.08em; }
+    .card h3 { margin: 0 0 8px; font-size: 1.5rem; letter-spacing: -0.03em; }
+    .card p { margin: 0; color: var(--muted); }
+    .metric { color: var(--accent); font-size: 2.1rem; font-weight: 800; letter-spacing: -0.05em; }
 
-        main {
-            max-width: 900px;
-            margin: auto;
-            padding: 50px 20px;
-        }
+    .feature {
+      padding: 32px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+    .feature p { max-width: 650px; margin: 8px 0 0; color: var(--muted); }
+    .tag {
+      padding: 10px 14px;
+      border-radius: 8px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      font-weight: 700;
+      white-space: nowrap;
+    }
 
-        h1 {
-            font-size: 40px;
-            margin-bottom: 10px;
-        }
+    footer { padding: 28px 0; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; }
 
-        h2 {
-            margin-top: 50px;
-        }
+    @media (max-width: 760px) {
+      .container { width: min(calc(100% - 32px), var(--max)); }
+      .nav-links { display: none; }
+      .hero { padding-top: 56px; }
+      .grid { grid-template-columns: 1fr; }
+      .card { min-height: 170px; }
+      .feature { grid-template-columns: 1fr; gap: 20px; padding: 24px; }
+      .tag { justify-self: start; }
+    }
 
-        p {
-            color: #555;
-        }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --canvas: #191919;
+        --surface: #202020;
+        --text: #ffffff;
+        --muted: rgba(255, 255, 255, 0.65);
+        --border: rgba(255, 255, 255, 0.2);
+        --accent: #5e9fe8;
+        --accent-soft: rgba(94, 159, 232, 0.12);
+      }
+      header { background: rgba(25, 25, 25, 0.92); }
+      .card:hover { border-color: rgba(255, 255, 255, 0.38); }
+    }
 
-        .intro {
-            margin-bottom: 50px;
-        }
-
-        .tarjetas {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .tarjeta {
-            background: white;
-            padding: 25px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-
-        .numero {
-            font-size: 30px;
-            font-weight: bold;
-            margin: 15px 0;
-        }
-
-        .tarjeta a {
-            color: #0066cc;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .tarjeta a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            margin-top: 60px;
-            padding: 30px;
-            text-align: center;
-            background: #222;
-            color: white;
-        }
-
-        @media (max-width: 600px) {
-
-            nav {
-                display: block;
-            }
-
-            nav a {
-                display: inline-block;
-                margin: 10px 15px 0 0;
-            }
-
-            h1 {
-                font-size: 32px;
-            }
-
-            .tarjetas {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-    </style>
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .card { transition: none; }
+    }
+  </style>
 </head>
-
-
 <body>
-
-
-<header>
-
-    <nav>
-
-        <strong>Oscar Romero</strong>
-
-        <div>
-
-            <a href="#inicio">Inicio</a>
-
-            <a href="#portafolio">Portafolio</a>
-
-            <a href="#proyectos">Proyectos</a>
-
-            <a href="#contacto">Contacto</a>
-
-        </div>
-
+  <header>
+    <nav class="container" aria-label="Navegación principal">
+      <a class="brand" href="#inicio">PORTAFOLIO</a>
+      <div class="nav-links">
+        <a href="#portafolio">Perfil</a>
+        <a href="#knowledge">Knowledge Base</a>
+        <a href="#projects">Projects</a>
+      </div>
     </nav>
+  </header>
 
-</header>
-
-
-<main>
-
-
-    <!-- INICIO -->
-
-    <section id="inicio" class="intro">
-
-        <h1>
-            Portafolio Técnico
-        </h1>
-
-        <p>
-            Ciberseguridad · Pentesting · Seguridad Web
-        </p>
-
-        <p>
-            Este sitio documenta mi aprendizaje práctico y los
-            proyectos que desarrollo en el área de ciberseguridad.
-        </p>
-
-        <p>
-
-            <strong>Meta principal:</strong>
-
-            construir un portafolio técnico mediante
-            100 máquinas de Hack The Box y
-            100 laboratorios de PortSwigger.
-
-        </p>
-
+  <main id="inicio">
+    <section class="hero container" aria-labelledby="titulo">
+      <span class="eyebrow">Ciberseguridad ofensiva</span>
+      <h1 id="titulo">Aprender.<br />Practicar.<br />Documentar.</h1>
+      <p class="lead">Un portafolio técnico construido con práctica real en entornos autorizados, documentación clara y proyectos reproducibles.</p>
     </section>
 
+    <section id="portafolio" class="container" aria-labelledby="portafolio-titulo">
+      <div class="section-head">
+        <h2 id="portafolio-titulo">Portafolio</h2>
+        <span class="section-number">01</span>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <span class="card-label">ABOUT</span>
+          <div>
+            <h3>Perfil técnico</h3>
+            <p>Experiencia, enfoque profesional y ruta de aprendizaje.</p>
+          </div>
+        </article>
+        <article class="card">
+          <span class="card-label">HACK THE BOX</span>
+          <div>
+            <div class="metric">100</div>
+            <h3>Máquinas HTB</h3>
+            <p>Resoluciones, metodología y reportes técnicos.</p>
+          </div>
+        </article>
+        <article class="card">
+          <span class="card-label">PORTSWIGGER</span>
+          <div>
+            <div class="metric">100</div>
+            <h3>Labs web</h3>
+            <p>Prácticas de seguridad web y aprendizajes clave.</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    <!-- PORTAFOLIO -->
-
-    <section id="portafolio">
-
-        <h2>
-            Mi progreso
-        </h2>
-
-
-        <div class="tarjetas">
-
-
-            <!-- HTB -->
-
-            <div class="tarjeta">
-
-                <h3>
-                    Hack The Box
-                </h3>
-
-                <p>
-                    Pentesting de sistemas, redes,
-                    Linux, Windows y Active Directory.
-                </p>
-
-                <div class="numero">
-                    0 / 100
-                </div>
-
-                <a href="#">
-                    Ver máquinas →
-                </a>
-
-            </div>
-
-
-            <!-- PORTSWIGGER -->
-
-            <div class="tarjeta">
-
-                <h3>
-                    PortSwigger
-                </h3>
-
-                <p>
-                    Seguridad web, autenticación,
-                    inyección, XSS, SSRF y otras vulnerabilidades.
-                </p>
-
-                <div class="numero">
-                    0 / 100
-                </div>
-
-                <a href="#">
-                    Ver laboratorios →
-                </a>
-
-            </div>
-
-
+    <section id="knowledge" class="container" aria-labelledby="knowledge-titulo">
+      <div class="section-head">
+        <h2 id="knowledge-titulo">Knowledge Base</h2>
+        <span class="section-number">02</span>
+      </div>
+      <div class="feature">
+        <div>
+          <h3>Técnicas / Cheat Sheets</h3>
+          <p>Notas prácticas, comandos, metodologías de enumeración y referencias rápidas organizadas para reutilizar.</p>
         </div>
-
+        <span class="tag">Base de conocimiento</span>
+      </div>
     </section>
 
-
-    <!-- PROYECTOS -->
-
-    <section id="proyectos">
-
-        <h2>
-            Proyectos
-        </h2>
-
-
-        <div class="tarjetas">
-
-
-            <div class="tarjeta">
-
-                <h3>
-                    Laboratorio de Pentesting
-                </h3>
-
-                <p>
-                    Laboratorio personal para practicar
-                    técnicas de seguridad ofensiva.
-                </p>
-
-            </div>
-
-
-            <div class="tarjeta">
-
-                <h3>
-                    Herramientas
-                </h3>
-
-                <p>
-                    Scripts y herramientas desarrolladas
-                    para automatizar tareas de pentesting.
-                </p>
-
-            </div>
-
-
-            <div class="tarjeta">
-
-                <h3>
-                    Base de conocimiento
-                </h3>
-
-                <p>
-                    Técnicas, metodologías y aprendizajes
-                    documentados durante el proceso.
-                </p>
-
-            </div>
-
-
+    <section id="projects" class="container" aria-labelledby="projects-titulo">
+      <div class="section-head">
+        <h2 id="projects-titulo">Projects</h2>
+        <span class="section-number">03</span>
+      </div>
+      <div class="feature">
+        <div>
+          <h3>Docker + Kali Linux en VPS</h3>
+          <p>Laboratorios aislados, infraestructura reproducible y proyectos técnicos desplegados de forma segura.</p>
         </div>
-
+        <span class="tag">En construcción</span>
+      </div>
     </section>
+  </main>
 
-
-    <!-- CONTACTO -->
-
-    <section id="contacto">
-
-        <h2>
-            Contacto
-        </h2>
-
-        <div class="tarjeta">
-
-            <p>
-
-                GitHub:
-
-                <a href="https://github.com/oromero12"
-                   target="_blank">
-
-                    github.com/oromero12
-
-                </a>
-
-            </p>
-
-            <p>
-                Próximamente: LinkedIn y otros enlaces.
-            </p>
-
-        </div>
-
-    </section>
-
-
-</main>
-
-
-<footer>
-
-    © 2026 Oscar Romero · Portafolio Técnico
-
-</footer>
-
-
+  <footer>
+    <div class="container">© 2026 · Portafolio técnico</div>
+  </footer>
 </body>
-
 </html>
